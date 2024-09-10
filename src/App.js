@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './Navbar';
-import Signup from './Signup';
 import Register from './Register';
+import ProfileForm from './ProfileForm'; // Import the ProfileForm component
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -71,6 +72,20 @@ const Footer = () => (
 
 // App Component
 const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<ProfileForm />} />
+        {/* Add more routes as needed */}
+      </Routes>
+    </Router>
+  );
+};
+
+// Home Component to display the main content
+const Home = () => {
   const [showSignup, setShowSignup] = useState(false);
 
   const handleGetStarted = () => {
@@ -81,20 +96,15 @@ const App = () => {
     setShowSignup(true);
   };
 
-  return (
-    <div className="app">
-      {showSignup ? (
-        <Register />
-        
-      ) : (
-        <>
-          <Header onGetStarted={handleGetStarted} />
-          <HeroSection onGetStarted={handleGetStarted} />
-          <MainContent onSignUp={handleSignUp} />
-          <Footer />
-        </>
-      )}
-    </div>
+  return showSignup ? (
+    <Register />
+  ) : (
+    <>
+      <Header onGetStarted={handleGetStarted} />
+      <HeroSection onGetStarted={handleGetStarted} />
+      <MainContent onSignUp={handleSignUp} />
+      <Footer />
+    </>
   );
 };
 

@@ -1,0 +1,74 @@
+/* Container for the entire registration page */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+  }
+  
+  /* Card to hold the sign-in content */
+  .register-card {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+  }
+  
+  /* Styling for the title */
+  .register-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Subtitle text */
+  .register-subtitle {
+    color: #666;
+    margin-bottom: 30px;
+  }
+  
+  /* Google sign-in button */
+  .google-btn {
+    background-color: #4285F4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  /* Google button hover effect */
+  .google-btn:hover {
+    background-color: #357ae8;
+  }
+  
+  /* Icon inside the Google button */
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 500px) {
+    .register-card {
+      width: 90%;
+      padding: 20px;
+    }
+  
+    .google-btn {
+      padding: 10px;
+    }
+  }
+  

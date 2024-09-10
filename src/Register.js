@@ -1,8 +1,12 @@
 import React from 'react';
 import { auth, googleProvider } from './firebase';
 import { signInWithPopup } from 'firebase/auth';
+import './Register.css'; // Import your CSS for styling
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const navigate = useNavigate(); // Hook to navigate between routes
+
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
@@ -24,6 +28,9 @@ const Register = () => {
           .then((response) => response.json())
           .then((data) => {
             console.log('User data saved:', data);
+
+            // Redirect to profile form after successful registration
+            navigate('/profile');
           })
           .catch((error) => {
             console.error('Error saving user data:', error);
@@ -35,9 +42,15 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
-      <h2>Register</h2>
-      <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <div className="register-container">
+      <div className="register-card">
+        <h2 className="register-title">Welcome to Meet My Mate</h2>
+        <p className="register-subtitle">Sign in to continue</p>
+        <button className="google-btn" onClick={signInWithGoogle}>
+          <img src="/google-icon.png" alt="Google icon" className="google-icon" />
+          Sign in with Google
+        </button>
+      </div>
     </div>
   );
 };

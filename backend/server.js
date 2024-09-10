@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const User = require('./models/User');
+const Profile = require('./models/Profile');
 
 dotenv.config();
 const app = express();
@@ -20,7 +21,6 @@ app.post('/register', async (req, res) => {
   const { uid, email, displayName, photoURL } = req.body;
 
   try {
-    // Check if user already exists
     let user = await User.findOne({ uid });
     if (!user) {
       user = new User({ uid, email, displayName, photoURL });
@@ -29,6 +29,29 @@ app.post('/register', async (req, res) => {
     res.status(201).json(user);
   } catch (error) {
     res.status(500).json({ message: 'Error saving user', error });
+  }
+});
+
+// Route to save or update user profile
+app.post('/profile', async (req, res) => {
+  const {
+    email, fullName, phoneNumber, jobTitle, companyName, website, linkedin, location,
+    experience, startupName, industry, startupStage, fundingStage, teamSize, vision,
+    degree, fieldOfStudy, institution, graduationYear, skills, interests, lookingFor,
+  } = req.body;
+
+  try {
+    let profile = await Profile.findOne({ email });
+    if (!profile) {
+      profile = new Profile(req.body);
+      await profile.save();
+    } else {
+      Object.assign(profile, req.body); // Update the existing profile
+      await profile.save();
+    }
+    res.status(201).json(profile);
+  } catch (error) {
+    res.status(500).json({ message: 'Error saving profile', error });
   }
 });
 
