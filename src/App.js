@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './Navbar';
 import Register from './Register';
 import ProfileForm from './ProfileForm'; // Import the ProfileForm component
+import QuoteCard from './QuoteCard';
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -14,12 +15,10 @@ const Header = ({ onGetStarted }) => (
 
 // Hero Section Component
 const HeroSection = ({ onGetStarted }) => (
+ 
   <section className="hero-section">
-    <h1 className="headline">Connect with Your Perfect Co-founder</h1>
-    <h2 className="subheadline">Find partners to turn your startup ideas into reality</h2>
-    <button className="cta-button" onClick={onGetStarted}>
-      Get Started
-    </button>
+
+    
   </section>
 );
 
@@ -44,6 +43,7 @@ const MainContent = ({ onSignUp }) => (
         </div>
       </div>
     </section>
+    <QuoteCard />
     <section className="cta-section">
       <h2 className="cta-title">Join Our Community</h2>
       <p>Sign up now and find your perfect match to start your entrepreneurial journey.</p>
@@ -101,7 +101,14 @@ const Home = () => {
   ) : (
     <>
       <Header onGetStarted={handleGetStarted} />
+      <br></br>
+      <h1 className="headline">Connect with Your Perfect Co-founder</h1>
       <HeroSection onGetStarted={handleGetStarted} />
+      <br></br>
+      <h2  className="subheadline">Find partners to turn your startup ideas into reality</h2>
+    <button className="cta-button" onClick={handleGetStarted}>
+      Get Started
+    </button>
       <MainContent onSignUp={handleSignUp} />
       <Footer />
     </>

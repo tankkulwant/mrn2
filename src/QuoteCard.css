@@ -1,0 +1,59 @@
+/* Container for the entire quote card */
+.quote-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    margin: 50px auto;
+    position: relative;
+    text-align: center;
+  }
+  
+  /* Styling for the quote mark icon */
+  .quote-icon {
+    font-size: 40px;
+    background-color: #333;
+    color: white;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -25px;
+    left: 25px;
+  }
+  
+  /* Styling for the quote content */
+  .quote-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .quote-content p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.5;
+  }
+  
+  .quote-author {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  /* Adding the background color effect like the image */
+  /* body {
+    background: linear-gradient(to right, #ff4d4d, #ff9900);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+   */
