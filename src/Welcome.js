@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 import Navbar from './Navbar';
 import Register from './Register';
 import ProfileForm from './ProfileForm'; // Import the ProfileForm component
 import QuoteCard from './QuoteCard';
-import Welcome from './Welcome';
-import Homepage from './Homepage'
+import './App.css';
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -17,10 +14,8 @@ const Header = ({ onGetStarted }) => (
 
 // Hero Section Component
 const HeroSection = ({ onGetStarted }) => (
- 
   <section className="hero-section">
-
-    
+    {/* Add your hero section content here */}
   </section>
 );
 
@@ -32,7 +27,7 @@ const MainContent = ({ onSignUp }) => (
       <div className="feature-list">
         <div className="feature">
           <h3>Real-time Chat</h3>
-          <img src="/SlideOne.jpg" alt="SlideOne"></img>
+          <img src="/SlideOne.jpg" alt="SlideOne" />
           <p>Connect and communicate instantly with potential co-founders.</p>
         </div>
         <div className="feature">
@@ -72,51 +67,35 @@ const Footer = () => (
   </footer>
 );
 
-// App Component
-const App = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/profile" element={<ProfileForm />} />
-        <Route path="/welcome" element={<Welcome />} />
-        
-        {/* Add more routes as needed */}
-      </Routes>
-    </Router>
+// Welcome Component to display the main content
+const Welcome = () => {
+  const [showSignup, setShowSignup] = useState(false);
+
+  const handleGetStarted = () => {
+    setShowSignup(true);
+  };
+
+  const handleSignUp = () => {
+    setShowSignup(true);
+  };
+
+  return showSignup ? (
+    <Register />
+  ) : (
+    <>
+      <Header onGetStarted={handleGetStarted} />
+      <br />
+      <h1 className="headline">Connect with Your Perfect Co-founder</h1>
+      <HeroSection onGetStarted={handleGetStarted} />
+      <br />
+      <h2 className="subheadline">Find partners to turn your startup ideas into reality</h2>
+      <button className="cta-button" onClick={handleGetStarted}>
+        Get Started
+      </button>
+      <MainContent onSignUp={handleSignUp} />
+      <Footer />
+    </>
   );
 };
 
-// Home Component to display the main content
-// const Home = () => {
-//   const [showSignup, setShowSignup] = useState(false);
-
-//   const handleGetStarted = () => {
-//     setShowSignup(true);
-//   };
-
-//   const handleSignUp = () => {
-//     setShowSignup(true);
-//   };
-
-//   return showSignup ? (
-//     <Register />
-//   ) : (
-//     <>
-//       <Header onGetStarted={handleGetStarted} />
-//       <br></br>
-//       <h1 className="headline">Connect with Your Perfect Co-founder</h1>
-//       <HeroSection onGetStarted={handleGetStarted} />
-//       <br></br>
-//       <h2  className="subheadline">Find partners to turn your startup ideas into reality</h2>
-//     <button className="cta-button" onClick={handleGetStarted}>
-//       Get Started
-//     </button>
-//       <MainContent onSignUp={handleSignUp} />
-//       <Footer />
-//     </>
-//   );
-// };
-
-export default App;
+export default Welcome;
