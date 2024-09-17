@@ -55,6 +55,22 @@ app.post('/profile', async (req, res) => {
   }
 });
 
+// Route to save user data
+app.post('/register', async (req, res) => {
+  const { uid, email, displayName, photoURL } = req.body;
+
+  try {
+    let user = await User.findOne({ uid });
+    if (!user) {
+      user = new User({ uid, email, displayName, photoURL });
+      await user.save();
+    }
+    res.status(201).json(user);
+  } catch (error) {
+    res.status(500).json({ message: 'Error saving user', error });
+  }
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
