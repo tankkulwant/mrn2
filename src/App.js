@@ -7,6 +7,10 @@ import ProfileForm from './ProfileForm'; // Import the ProfileForm component
 import QuoteCard from './QuoteCard';
 import Welcome from './Welcome';
 import Homepage from './Homepage'
+import Inbox from './Inbox';
+import Notifications from './Notifications' ;
+import Explore from './Explore' ;
+import Networking from './Networking' ;
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -81,6 +85,11 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<ProfileForm />} />
         <Route path="/welcome" element={<Welcome />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/explore" element={<Explore />} />
+        <Route path="/networking" element={<Networking />} />
+        <Route path="/inbox" element={<Inbox />} />
+        <Route path="/notifications" element={<Notifications />} />
         
         {/* Add more routes as needed */}
       </Routes>

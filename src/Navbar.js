@@ -5,10 +5,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <a href="/" className="nav-link">Explore</a>
-        <a href="/" className="nav-link">Services</a>
-        <a href="/" className="nav-link">Blogs</a>
-        <a href="/" className="nav-link">About Us</a>
+        <a href="/" className="nav-link">Home</a>
+        <a href="/explore" className="nav-link">Explore</a>
+        <a href="/networking" className="nav-link">Networking</a>
+        <a href="/inbox" className="nav-link">Inbox</a>
+        <a href="/notifications" className="nav-link">Notifications</a>
       </div>
       <div className="navbar-center">
         <img src="/meetmymatelogo.jpg" alt="Logo" className="logo" />
