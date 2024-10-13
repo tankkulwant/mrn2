@@ -1,59 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-.navbar {
- 
+.navbar { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #FFFFFF; 
+    padding: 5px; 
+    width: 100% !important; 
+    position: relative;
+    z-index: 1;
+    height: 80px; /* Increased navbar height for centering */
+} 
+
+.navbar-left, .navbar-right { 
+    display: flex; 
+    align-items: center; 
+} 
+
+.navbar-center { 
+    position: relative; 
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #FF5A5F;
-    padding: 5px;
-    padding-right: 10px;
-    width: 100% !important;
-  }
-  
-  .navbar-left, .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-center {
     flex-grow: 1;
+} 
+
+.navbar-center img { 
+    height: 120px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+/* Nav Item Styling */
+.nav-link { 
+    font-family: 'Poppins', sans-serif; 
+    color: #FF0000; 
+    margin: 0 15px; 
+    font-weight: 700; 
+    text-decoration: none; 
+    font-size: 18px; 
     display: flex;
-    justify-content: center;
-  }
-  
-  .nav-link {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
-  
-  .logo {
-    height: 50px;
-  }
-  
-  .search-bar {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-right: 20px;
-  }
-  
-  .icon {
+    flex-direction: column;
+    justify-content: center; /* Centers items vertically */
+    align-items: center; /* Centers items horizontally */
+    text-align: center;
+    height: 100%; /* Ensure it takes full height of navbar */
+    padding: 10px 0; /* Added padding to center elements */
+}
+
+.nav-link:hover { 
+    text-decoration: underline; 
+}
+
+.nav-icon {
     width: 30px;
     height: 30px;
-    background-color: white;
-    border-radius: 50%;
-    margin-left: 10px;
-  }
+    margin-bottom: 5px;
+    align-items: center;
+    margin: 0 auto;
+}
 
-  .active {
-    font-weight: bold;
-    color: blue;
-  }
-  
-  
+.logo { 
+    height: 50px; 
+} 
+
+.search-bar { 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-right: 20px; 
+} 
+
+.icon { 
+    width: 30px; 
+    height: 30px; 
+    background-color: white; 
+    border-radius: 50%; 
+    margin-left: 10px; 
+    
+} 
+
+.active { 
+    font-weight: bold; 
+    color: blue; 
+}

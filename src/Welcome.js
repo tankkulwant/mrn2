@@ -41,6 +41,27 @@ const MainContent = ({ onSignUp }) => (
       </div>
     </section>
     <QuoteCard />
+
+
+{/* Reviews */}
+<div className="bg-white p-6 rounded shadow mb-6">
+  <h2 className="text-xl font-semibold mb-4">Reviews</h2>
+  <div className="space-y-4">
+    {/* Example Review Card */}
+    <div className="bg-gray-50 p-4 rounded shadow hover:bg-gray-100">
+      <p className="font-semibold">User Name 1</p>
+      <p className="text-gray-600">"This platform is amazing! Highly recommend."</p>
+    </div>
+    <div className="bg-gray-50 p-4 rounded shadow hover:bg-gray-100">
+      <p className="font-semibold">User Name 2</p>
+      <p className="text-gray-600">"I found a great team here. Very supportive!"</p>
+    </div>
+    {/* Add more reviews similarly */}
+  </div>
+</div>
+
+
+
     <section className="cta-section">
       <h2 className="cta-title">Join Our Community</h2>
       <p>Sign up now and find your perfect match to start your entrepreneurial journey.</p>
@@ -85,8 +106,7 @@ const Welcome = () => {
     <>
       <Header onGetStarted={handleGetStarted} />
       <br />
-      <h1 className="headline">Connect with Your Perfect Co-founder</h1>
-      <HeroSection onGetStarted={handleGetStarted} />
+     <HeroSection onGetStarted={handleGetStarted} />
       <br />
       <h2 className="subheadline">Find partners to turn your startup ideas into reality</h2>
       <button className="cta-button" onClick={handleGetStarted}>

@@ -72,7 +72,7 @@ app.post('/register', async (req, res) => {
 });
 
 // Use the profile routes
-app.use('/api', profileRoutes); // Your API endpoint for profiles will be: /api/profiles
+//app.use('/api', profileRoutes); // Your API endpoint for profiles will be: /api/profiles
 
 
 const PORT = process.env.PORT || 5000;

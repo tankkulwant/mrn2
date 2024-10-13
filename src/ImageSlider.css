@@ -1,0 +1,47 @@
+/* Slider card container */
+.card-slider-container {
+    width: 100%;
+    max-width: 600px; /* Adjust this as per your design */
+    margin: 0 auto;   /* Center the slider */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Each slide card */
+  .slider-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+ /* Container for the slider */
+.card-slider-container {
+    width: 100%;
+    max-width: 600px; /* Set max width for the slider */
+    margin: 0 auto; /* Center the slider horizontally */
+  }
+  
+  /* Image inside the slider */
+  .slider-image {
+    width: 100%; /* Ensure image takes full width */
+    max-height: 300px; /* Set a maximum height for the image */
+    object-fit: contain; /* Ensure the image covers the container while keeping its aspect ratio */
+    border-radius: 10px;
+  }
+  
+  
+  /* Swiper navigation buttons styling */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000; /* Color of arrows */
+  }
+  
+  /* Swiper pagination bullets */
+  .swiper-pagination-bullet {
+    background: #007bff; /* Color of pagination bullets */
+  }
+  
