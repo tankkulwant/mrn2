@@ -6,7 +6,7 @@ const DashboardMain = () => {
     <div className="p-6 bg-gray-100 min-h-screen">
 <ImageSlider  slides={[{ image: 'logofinal.jpeg' }, { image: 'SlideOne.jpg' }]} />
         
-
+<br></br>
 
 <div className="bg-white p-6 rounded shadow mb-6">
   {/* My Profile */}

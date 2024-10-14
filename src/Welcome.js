@@ -40,25 +40,53 @@ const MainContent = ({ onSignUp }) => (
         </div>
       </div>
     </section>
-    <QuoteCard />
-
-
+<br></br>
 {/* Reviews */}
 <div className="bg-white p-6 rounded shadow mb-6">
   <h2 className="text-xl font-semibold mb-4">Reviews</h2>
   <div className="space-y-4">
     {/* Example Review Card */}
-    <div className="bg-gray-50 p-4 rounded shadow hover:bg-gray-100">
-      <p className="font-semibold">User Name 1</p>
-      <p className="text-gray-600">"This platform is amazing! Highly recommend."</p>
+    <div className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
+      {/* Profile Picture */}
+      <img 
+        src="https://via.placeholder.com/50" 
+        alt="User 1 Profile" 
+        className="w-12 h-12 rounded-full mr-4"
+      />
+      {/* Review Content */}
+      <div>
+        <p className="font-semibold">User Name 1</p>
+        <p className="text-gray-600">"This platform is amazing! Highly recommend."</p>
+      </div>
     </div>
-    <div className="bg-gray-50 p-4 rounded shadow hover:bg-gray-100">
-      <p className="font-semibold">User Name 2</p>
-      <p className="text-gray-600">"I found a great team here. Very supportive!"</p>
+
+    <div className="flex items-center bg-gray-50 p-4 rounded-lg shadow hover:bg-gray-100">
+      {/* Profile Picture */}
+      <img 
+        src="https://via.placeholder.com/50" 
+        alt="User 2 Profile" 
+        className="w-12 h-12 rounded-full mr-4"
+      />
+      {/* Review Content */}
+      <div>
+        <p className="font-semibold">User Name 2</p>
+        <p className="text-gray-600">"I found a great team here. Very supportive!"</p>
+      </div>
     </div>
+
     {/* Add more reviews similarly */}
   </div>
 </div>
+
+<br></br>
+<div className="quote-card-container">
+    <QuoteCard />
+    <QuoteCard />
+    <QuoteCard />
+  </div>
+
+
+
 
 
 

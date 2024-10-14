@@ -15,7 +15,7 @@ body {
 }
 
 .app {
-  background-image: url('E:\REACT APPS\mrn2\mrn2\public\backg.jpg');
+  background-image: url('C:\Users\student\Desktop\Kulwant Tank\mern\draftweb\public\backg.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -129,4 +129,22 @@ body {
 .footer-menu a {
   text-decoration: none;
   color: white;
+}
+
+
+/* WELCOME JS K COMPONENT HAI NEECHE */
+/* Flexbox for aligning Quote Cards in a row */
+.quote-card-container {
+  display: flex;
+  justify-content: space-around;  /* Space evenly between the cards */
+  align-items: flex-start;        /* Align the cards to the top */
+  gap: 20px;                      /* Adds space between cards */
+  padding: 20px;
+  flex-wrap: wrap;                /* Allows wrapping if the screen size is too small */
+}
+
+.quote-card {
+  flex: 1;
+  min-width: 250px;               /* Minimum size for responsiveness */
+  max-width: 30%;                 /* Adjust the size to fit 3 cards in a row */
 }
