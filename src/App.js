@@ -11,6 +11,7 @@ import Inbox from './Inbox';
 import Notifications from './Notifications' ;
 import Explore from './Explore' ;
 import Networking from './Networking' ;
+import Profile from './Profile';
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -90,6 +91,7 @@ const App = () => {
         <Route path="/networking" element={<Networking />} />
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/profileview" element={<Profile />} />
         
         {/* Add more routes as needed */}
       </Routes>

@@ -42,7 +42,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-right">
         <input type="text" className="search-bar" placeholder="Search" />
-        <NavLink exact to="/" className="nav-link" activeClassName="active-link">
+        <NavLink exact to="/profileview" className="nav-link" activeClassName="active-link">
           <div className="nav-item">
             <img src="/profile-user.png" alt="Home" className="nav-icon" />
             <span>Profile</span>
