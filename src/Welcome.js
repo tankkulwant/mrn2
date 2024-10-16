@@ -4,13 +4,15 @@ import Register from './Register';
 import ProfileForm from './ProfileForm'; // Import the ProfileForm component
 import QuoteCard from './QuoteCard';
 import './App.css';
+import WelcomeNav from './WelcomeNav';
 
 // Header Component
-const Header = ({ onGetStarted }) => (
+const Header = ({ onGetStarted, onSignUp }) => (
   <header className="header">
-    <Navbar />
+    <WelcomeNav onSignUp={onSignUp} /> {/* Pass onSignUp here */}
   </header>
 );
+
 
 // Hero Section Component
 const HeroSection = ({ onGetStarted }) => (
@@ -132,7 +134,7 @@ const Welcome = () => {
     <Register />
   ) : (
     <>
-      <Header onGetStarted={handleGetStarted} />
+      <Header onGetStarted={handleGetStarted} onSignUp={handleSignUp}  />
       <br />
      <HeroSection onGetStarted={handleGetStarted} />
       <br />
@@ -141,6 +143,7 @@ const Welcome = () => {
         Get Started
       </button>
       <MainContent onSignUp={handleSignUp} />
+     
       <Footer />
     </>
   );
