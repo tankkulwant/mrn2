@@ -36,7 +36,7 @@ const WelcomeNav = ({ onSignUp }) => {
         <img src="/MeetMyMate_120x120.png" alt="Logo" />
       </div>
       <div className="navbar-right">
-
+ 
       <span className="nav-link" onClick={onSignUp}>
           <div className="nav-item">
             <span>Sign Up</span>

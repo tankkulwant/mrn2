@@ -1,22 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageSlider from './ImageSlider';
+import { NavLink } from 'react-router-dom';
 
 const DashboardMain = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleImageClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
 <ImageSlider  slides={[{ image: 'logofinal.jpeg' }, { image: 'SlideOne.jpg' }]} />
         
 <br></br>
 
-<div className="bg-white p-6 rounded shadow mb-6">
-  {/* My Profile */}
-  <h2 className="text-xl font-semibold mb-4">My Profile</h2>
-  <div className="bg-gray-50 p-4 rounded border shadow hover:shadow-lg mb-6">
-    <h3 className="font-semibold mb-2">John Doe</h3>
-    <p className="text-gray-600">Entrepreneur | Founder</p>
-    <p className="text-gray-600">Working on: Blockchain Fintech Solution</p>
-    <button className="mt-2 bg-blue-500 text-white px-3 py-1 rounded">Edit Profile</button>
-  </div>
+<div>
+      <div className="bg-white p-6 rounded shadow mb-6">
+        {/* My Profile */}
+        <h2 className="text-xl font-semibold mb-4">My Profile</h2>
+        <div className="bg-gray-50 p-4 rounded border shadow hover:shadow-lg mb-6 flex items-center">
+          {/* Profile Picture */}
+          <img 
+            src="profile-user.png" 
+            alt="Profile" 
+            className="w-24 h-24 rounded-full mr-4 cursor-pointer"
+            onClick={handleImageClick} 
+            
+          />
+          
+          {/* Profile Details */}
+          <div>
+            <h3 className="font-semibold mb-2">John Doe</h3>
+            <p className="text-gray-600">Entrepreneur | Founder</p>
+            <p className="text-gray-600">Working on: Blockchain Fintech Solution</p>
+            <p className="text-gray-600">Location: San Francisco, CA</p> {/* Location field */}
+            <p className="text-gray-600">Connections: 150</p> {/* Connections field */}
+            <p className="text-gray-600">Followers: 2,300</p> {/* Followers field */}
+            <NavLink to="/profileview">
+              <button className="mt-2 bg-blue-500 text-white px-3 py-1 rounded">
+                Edit Profile
+              </button>
+            </NavLink>
+          </div>
+        </div>
+      </div>
+
+
+      {/* // pop up  */}
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded shadow-lg">
+            <h3 className="text-lg font-semibold mb-4">Profile Options</h3>
+            <div className="space-y-4">
+              <NavLink to="/profileview">
+                <button className="w-full bg-green-500 text-white px-3 py-2 rounded">
+                  View Profile
+                </button>
+              </NavLink>
+              <NavLink to="/profileedit">
+                <button className="w-full bg-blue-500 text-white px-3 py-2 rounded">
+                  Edit Profile
+                </button>
+              </NavLink>
+            </div>
+            <button 
+              className="mt-4 w-full bg-red-500 text-white px-3 py-2 rounded" 
+              onClick={closeModal}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+
 
   {/* My Resources */}
   <h2 className="text-xl font-semibold mb-4">My Resources</h2>
@@ -58,7 +121,11 @@ const DashboardMain = () => {
 </div>
 
       
-    </div>
+
+
+
+
+    
   );
 };
 
