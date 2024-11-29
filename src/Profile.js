@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
 
+const sectionClass = "mb-8 p-4 rounded-md border border-gray-300 bg-blue-50";
+
 const Profile = () => {
   const initialProfile = {
     name: "John Doe",
@@ -116,7 +118,7 @@ const Profile = () => {
           <div className="p-8">
           <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6">
   {/* Skills Section */}
-  <div>
+  <div className={sectionClass}>
     <h2 className="text-xl font-semibold text-gray-800 mb-4">Skills</h2>
     <ul className="space-y-2">
       {profile.skills.map((skill, index) => (
@@ -147,7 +149,7 @@ const Profile = () => {
   </div>
 
   {/* Statistics Section */}
-  <div>
+  <div className={sectionClass}>
     <h2 className="text-xl font-semibold text-gray-800 mb-4">Statistics</h2>
     <p className="text-gray-700">
       <strong>Connections:</strong> {profile.connections}
@@ -160,7 +162,7 @@ const Profile = () => {
 
 
             {/* Bio Section */}
-            <div className="mb-8">
+            <div className={sectionClass}>
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Bio</h2>
               {isEditing ? (
                 <textarea
@@ -175,7 +177,7 @@ const Profile = () => {
             </div>
            
             {/* Certificates Section */}
-            <div className="mb-8">
+            <div className={sectionClass}>
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Certificates</h2>
               {profile.certificates.map((cert, index) => (
                 <div key={index} className="mb-4">
@@ -229,7 +231,7 @@ const Profile = () => {
             </div>
 
             {/* Work Experience Section */}
-            <div className="mb-8">
+            <div className={sectionClass}>
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Work Experience</h2>
               {profile.workExperience.map((job, index) => (
                 <div key={index} className="mb-4">
@@ -293,7 +295,7 @@ const Profile = () => {
             </div>
 
             {/* Resources Section */}
-            <div className="mb-8">
+            <div className={sectionClass}>
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Resources</h2>
               {Object.entries(profile.resources).map(([key, resource]) => (
                 <div key={key} className="mb-4">
@@ -336,7 +338,7 @@ const Profile = () => {
             </div>
 
             {/* Contact Section */}
-            <div className="mb-8">
+            <div className={sectionClass}>
               <h2 className="text-xl font-semibold text-gray-800 mb-4">Contact</h2>
               {isEditing ? (
                 <>
@@ -391,7 +393,7 @@ const Profile = () => {
       className="text-blue-600 hover:text-blue-800"
       download
     >
-      Download CV
+      View CV
     </a>
   )}
 </div>
