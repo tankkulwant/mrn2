@@ -12,6 +12,7 @@ import Notifications from './Notifications' ;
 import Explore from './Explore' ;
 import Networking from './Networking' ;
 import Profile from './Profile';
+import ProfilePage from './ProfilePage';
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -92,6 +93,7 @@ const App = () => {
         <Route path="/inbox" element={<Inbox />} />
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/profileview" element={<Profile />} />
+        <Route path="/profile/:id" element={<ProfilePage />} />
         
         {/* Add more routes as needed */}
       </Routes>
