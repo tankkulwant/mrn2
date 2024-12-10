@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { getAuth, signOut } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./Navbar";
 
 const sectionClass = "mb-8 p-4 rounded-md border border-gray-300 bg-blue-50";
@@ -76,6 +79,18 @@ const Profile = () => {
     console.log("Saved profile:", profile);
   };
 
+   // Handle Logout
+   const handleLogout = async () => {
+    const auth = getAuth();
+    try {
+      await signOut(auth);
+      toast.success("You have been logged out successfully.");
+      // Optionally redirect to login or welcome page
+    } catch (error) {
+      toast.error("Error logging out: " + error.message);
+    }
+  };
+
   return (
     <div className="bg-gray-50 min-h-screen">
       <Navbar />
@@ -112,6 +127,15 @@ const Profile = () => {
             ) : (
               <p className="text-sm text-gray-100">{profile.location}</p>
             )}
+          </div>
+           {/* Logout Button */}
+           <div className="flex justify-end p-4">
+            <button
+              onClick={handleLogout}
+              className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700"
+            >
+              Logout
+            </button>
           </div>
 
           {/* Profile Details */}

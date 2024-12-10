@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/* Navbar Styling */
 .navbar { 
     display: flex; 
     justify-content: space-between;
@@ -78,10 +79,79 @@
     background-color: white; 
     border-radius: 50%; 
     margin-left: 10px; 
-    
 } 
 
 .active { 
     font-weight: bold; 
     color: blue; 
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Drawer Styling */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75%; /* Adjust width as needed */
+    max-width: 300px; /* Optional: Ensure it doesn't exceed a specific size */
+    height: 100%; /* Full height */
+    background-color: #ffffff;
+    z-index: 1000; /* Ensure it stays above the navbar */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+
+.drawer.open {
+    transform: translateX(0); /* Slide in the drawer */
+}
+
+.drawer-content {
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.drawer-content .nav-link {
+    margin: 15px 0;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Close Button in Drawer */
+.close-button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Overlay for background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Slightly below the drawer */
+}
+
+/* Ensure the overlay is hidden when the drawer is closed */
+.overlay.hidden {
+    display: none;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .md\\:hidden {
+        display: none;
+    }
 }
