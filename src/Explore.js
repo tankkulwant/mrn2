@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 // Sample data structure for profiles
 const profiles = [
@@ -36,7 +37,10 @@ const Explore = () => {
   };
 
   return (
+    <div >
+       <Navbar />
     <div className="p-6 bg-gray-100 min-h-screen">
+    
       <h2 className="text-2xl font-bold text-center mb-8">Explore Profiles</h2>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -57,6 +61,7 @@ const Explore = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

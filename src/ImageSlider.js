@@ -15,7 +15,7 @@ const ImageSlider = ({ slides = [] }) => {
         slidesPerView={1}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 2500 }}  // Enable autoplay with 2.5 seconds delay
+        autoplay={{ delay: 5000 }}  // Enable autoplay with 5 seconds delay
         modules={[Navigation, Pagination, Autoplay]}  // Add Autoplay module here
       >
         {slides.length > 0 ? (

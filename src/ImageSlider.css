@@ -21,7 +21,7 @@
  /* Container for the slider */
 .card-slider-container {
     width: 100%;
-    max-width: 600px; /* Set max width for the slider */
+    max-width: 1000px; /* Set max width for the slider */
     margin: 0 auto; /* Center the slider horizontally */
   }
   
