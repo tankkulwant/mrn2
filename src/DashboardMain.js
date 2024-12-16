@@ -5,7 +5,7 @@ import ImageSlider from './ImageSlider';
 const DashboardMain = () => {
  
   return (
-    <div className="p-4 sm:p-6 bg-gray-100 min-h-screen">
+    <div className="p-4 sm:p-6 bg-white min-h-screen">
       <ImageSlider slides={[{ image: 'logofinal.jpeg' }, { image: 'SlideOne.jpg' }]} />
       <br />
 

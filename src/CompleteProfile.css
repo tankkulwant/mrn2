@@ -1,0 +1,158 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.step-indicator {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e3a8a;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: #4f46e5;
+    outline: none;
+}
+
+/* Add styling for select elements (dropdowns) */
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+select:focus {
+    border-color: #4f46e5;
+    outline: none;
+}
+
+/* Improve radio buttons layout */
+.startup-radio-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.startup-radio-label {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+}
+
+.startup-radio-label input {
+    margin-right: 10px;
+}
+
+/* Container for the dropdowns */
+.startup-dropdowns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dropdown-container select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Button container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #e5e7eb;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button.back {
+    background-color: #e2e8f0;
+    margin-right: 12px;
+}
+
+button.back:hover {
+    background-color: #cbd5e1;
+}
+
+button:not(:disabled) {
+    background-color: #4f46e5;
+}
+
+button:not(:disabled):hover {
+    background-color: #4338ca;
+}
+
+/* Additional styling for inputs and buttons for better visual hierarchy */
+input, select {
+    margin-bottom: 15px;
+}
+
+h2, .step-indicator {
+    text-align: center;
+}
+
+.startup-preferences-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}

@@ -57,7 +57,13 @@ const Register = () => {
             setTimeout(() => {
               
                // Redirect to profile form and pass the email
-            navigate('/profile', { state: { email: user.email } });
+               navigate('/complete-profile', { 
+                state: { 
+                  email: user.email, 
+                  displayName: user.displayName // Include displayName here
+                } 
+              });
+              
             }, 3000); // 3-second delay
           })
           .catch((error) => {

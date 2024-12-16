@@ -13,6 +13,7 @@ import Explore from './Explore' ;
 import Networking from './Networking' ;
 import Profile from './Profile';
 import ProfilePage from './ProfilePage';
+import CompleteProfile from './CompleteProfile';
 
 // Header Component
 const Header = ({ onGetStarted }) => (
@@ -94,6 +95,7 @@ const App = () => {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/profileview" element={<Profile />} />
         <Route path="/profile/:id" element={<ProfilePage />} />
+        <Route path="/complete-profile" element={<CompleteProfile />} />
         
         {/* Add more routes as needed */}
       </Routes>
