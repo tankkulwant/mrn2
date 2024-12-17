@@ -27,6 +27,50 @@ h2 {
     margin-bottom: 20px;
 }
 
+.info-section {
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .info-section h3 {
+    font-size: 1.4rem;
+    color: #334155;
+    margin-bottom: 12px;
+  }
+  
+  .info-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  strong {
+    color: #1e3a8a;
+  }
+  
+  .edit-button {
+    background-color: #4f46e5;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 12px;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-button:hover {
+    background-color: #4338ca;
+  }
+
+
+
 input {
     width: 100%;
     padding: 12px;
@@ -106,6 +150,22 @@ select:focus {
     margin-top: 20px;
 }
 
+.confirm-button {
+    background-color: #10b981;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-button:hover {
+    background-color: #059669;
+  }
+
 button {
     flex: 1;
     padding: 12px 24px;
@@ -151,8 +211,13 @@ h2, .step-indicator {
 
 .startup-preferences-container {
     padding: 20px;
+   
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+}
+
+.startup-preferences-container button {
+    margin-right: 10px; /* Add spacing between buttons */
 }

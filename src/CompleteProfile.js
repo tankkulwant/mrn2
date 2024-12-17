@@ -3,6 +3,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './CompleteProfile.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CircularProgress from '@mui/material/CircularProgress'; 
+import Button from '@mui/material/Button'; 
 
 const CompleteProfile = () => {
   const location = useLocation();
@@ -238,50 +240,73 @@ const CompleteProfile = () => {
                     );
                   
           
-
-        case 5:
-  return (
-    <div>
-      <h2>Confirm Your Information</h2>
-      <div>
-        <h3>Basic Information</h3>
-        <p>Name: {formData.name}</p>
-        <p>Email: {email}</p>
-        <p>Phone Number: {formData.phoneNumber}</p>
-        <button onClick={() => setStep(1)}>Edit</button>
-      </div>
-
-      <div>
-        <h3>Professional Information</h3>
-        <p>Job Title: {formData.jobTitle}</p>
-        <p>Company: {formData.companyName}</p>
-        <p>Website: {formData.website}</p>
-        <p>LinkedIn: {formData.linkedInProfile}</p>
-        <p>Experience: {formData.yearsOfExperience}</p>
-        <button onClick={() => setStep(2)}>Edit</button>
-      </div>
-
-      <div>
-        <h3>Location Information</h3>
-        <p>Location: {formData.location}</p>
-        <button onClick={() => setStep(3)}>Edit</button>
-      </div>
-
-      <div>
-        <h3>Startup Preferences</h3>
-        <p>Interested in Startup: {formData.preferences.interestedInStartup ? 'Yes' : 'No'}</p>
-        {formData.preferences.interestedInStartup && (
-          <>
-            <p>Industry: {formData.preferences.industry}</p>
-            <p>Stage: {formData.preferences.stage}</p>
-          </>
-        )}
-        <button onClick={() => setStep(4)}>Edit</button>
-      </div>
-
-      <button onClick={handleSubmit}>Confirm and Create Profile</button>
-    </div>
-  );
+                    case 5:
+                      return (
+                        <div className="profile-container">
+                          <h2>Confirm Your Information</h2>
+                    
+                          {/* Basic Information Section */}
+                          <div className="info-section">
+                            <h3>Basic Information</h3>
+                            <p><strong>Name:</strong> {formData.name}</p>
+                            <p><strong>Email:</strong> {email}</p>
+                            <p><strong>Phone Number:</strong> {formData.phoneNumber}</p>
+                            <button className="edit-button" onClick={() => setStep(1)}>Edit</button>
+                          </div>
+                    
+                          {/* Professional Information Section */}
+                          <div className="info-section">
+                            <h3>Professional Information</h3>
+                            <p><strong>Job Title:</strong> {formData.jobTitle}</p>
+                            <p><strong>Company:</strong> {formData.companyName}</p>
+                            <p><strong>Website:</strong> {formData.website}</p>
+                            <p><strong>LinkedIn:</strong> {formData.linkedInProfile}</p>
+                            <p><strong>Experience:</strong> {formData.yearsOfExperience}</p>
+                            <button className="edit-button" onClick={() => setStep(2)}>Edit</button>
+                          </div>
+                    
+                          {/* Location Information Section */}
+                          <div className="info-section">
+                            <h3>Location Information</h3>
+                            <p><strong>Location:</strong> {formData.location}</p>
+                            <button className="edit-button" onClick={() => setStep(3)}>Edit</button>
+                          </div>
+                    
+                          {/* Startup Preferences Section */}
+                          <div className="info-section">
+                            <h3>Startup Preferences</h3>
+                            <p>
+                              <strong>Interested in Startup:</strong>{" "}
+                              {formData.preferences.interestedInStartup ? 'Yes' : 'No'}
+                            </p>
+                            {formData.preferences.interestedInStartup && (
+                              <>
+                                <p><strong>Industry:</strong> {formData.preferences.industry}</p>
+                                <p><strong>Stage:</strong> {formData.preferences.stage}</p>
+                              </>
+                            )}
+                            <button className="edit-button" onClick={() => setStep(4)}>Edit</button>
+                          </div>
+                    
+                          <div className="button-container">
+              {/* Disable the button and show spinner during loading */}
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                disabled={loading}
+                style={{ minWidth: '150px', position: 'relative' }}
+              >
+                {loading ? (
+                  <CircularProgress size={24} color="inherit" style={{ position: 'absolute' }} />
+                ) : (
+                  'Confirm and Create Profile'
+                )}
+              </Button>
+            </div>
+                        </div>
+                      );
+                    
 
       default:
         return null;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { auth, googleProvider } from './firebase';
 import { signInWithPopup } from 'firebase/auth';
 import './Register.css'; // Import your CSS for styling
@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify'; // Import Toastify
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
+import { CircularProgress } from '@mui/material'; // Import Material-UI Circular Progress (or use your own spinner)
 
 const Footer = () => (
   <footer className="footer">
@@ -23,9 +24,12 @@ const Footer = () => (
 );
 
 const Register = () => {
+  const [loading, setLoading] = useState(false); // Manage loading state
   const navigate = useNavigate(); // Hook to navigate between routes
 
   const signInWithGoogle = () => {
+    setLoading(true); // Set loading state to true
+
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         const user = result.user;
@@ -55,18 +59,19 @@ const Register = () => {
 
             // Delay the navigation to allow the toast to be visible
             setTimeout(() => {
-              
-               // Redirect to profile form and pass the email
-               navigate('/complete-profile', { 
+              setLoading(false); // Stop loading before navigation
+
+              // Redirect to profile form and pass the email
+              navigate('/complete-profile', { 
                 state: { 
                   email: user.email, 
                   displayName: user.displayName // Include displayName here
                 } 
               });
-              
             }, 3000); // 3-second delay
           })
           .catch((error) => {
+            setLoading(false); // Stop loading in case of an error
             toast.error('Error saving user data. Please try again.', {
               position: "top-right",
               autoClose: 3000,
@@ -75,6 +80,7 @@ const Register = () => {
           });
       })
       .catch((error) => {
+        setLoading(false); // Stop loading in case of an error
         // Show error toast
         toast.error('Error during sign-in. Please try again.', {
           position: "top-right",
@@ -94,10 +100,19 @@ const Register = () => {
         <div className="register-card" style={{ minHeight: '400px', alignItems: 'center', alignContent: 'center' }}>
           <h2 className="register-title">Welcome to Meet My Mate</h2>
           <p className="register-subtitle">Sign in to continue</p>
-          <button className="google-btn" onClick={signInWithGoogle}>
-            <img src="/google-icon.png" alt="Google icon" className="google-icon" />
-            Sign in with Google
-          </button>
+
+          {/* Show the spinner if loading, otherwise show the sign-in button */}
+          {loading ? (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <CircularProgress size={40} /> {/* Display a loading spinner */}
+              <p>Loading... Please Wait...</p>
+            </div>
+          ) : (
+            <button className="google-btn" onClick={signInWithGoogle}>
+              <img src="/google-icon.png" alt="Google icon" className="google-icon" />
+              Sign in with Google
+            </button>
+          )}
         </div>
       </div>
 
